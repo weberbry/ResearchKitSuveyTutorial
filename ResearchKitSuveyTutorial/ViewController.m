@@ -24,25 +24,24 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.taskViewController == nil) {
-        ORKOrderedTask *task = [[ORKOrderedTask alloc] initWithIdentifier:@"SleepSurvey" steps:[self generateSurveySteps]];
-        self.taskViewController = [[ORKTaskViewController alloc] initWithTask:task taskRunUUID:nil];
-        self.taskViewController.delegate = self;
-        [self presentViewController:self.taskViewController animated:YES completion:nil];
-    }
+    ORKOrderedTask *task = [self generateOrderedTask];
+    ORKTaskViewController *taskViewController = [[ORKTaskViewController alloc] initWithTask:task taskRunUUID:nil];
+    taskViewController.delegate = self;
+    [self presentViewController:taskViewController animated:YES completion:nil];
 }
 
 #pragma survey - Survey Setup
 
-- (NSArray *)generateSurveySteps {
+- (ORKOrderedTask *)generateOrderedTask {
     ORKQuestionStep *timeSleptQuestionStep = [self timeSleptStep];
     ORKQuestionStep *sleepQualityQuestionStep = [self sleepQualityStep];
-    return @[timeSleptQuestionStep, sleepQualityQuestionStep];
+    ORKOrderedTask *task = [[ORKOrderedTask alloc] initWithIdentifier:@"SleepSurvey" steps:@[timeSleptQuestionStep, sleepQualityQuestionStep]];
+    return task;
 }
 
 - (ORKQuestionStep *)timeSleptStep {
     ORKTimeOfDayAnswerFormat *format = [[ORKTimeOfDayAnswerFormat alloc] initWithDefaultComponents:nil];
-    ORKQuestionStep *step = [ORKQuestionStep questionStepWithIdentifier:@"timeQuestion"
+    ORKQuestionStep *step = [ORKQuestionStep questionStepWithIdentifier:@"wakeUpTimeQuestion"
                                                                   title:@"What time did you wake up this morning"
                                                                  answer:format];
     return step;
@@ -50,7 +49,7 @@
 
 - (ORKQuestionStep *)sleepQualityStep {
     ORKScaleAnswerFormat *format = [ORKScaleAnswerFormat scaleAnswerFormatWithMaxValue:10 minValue:0 step:1 defaultValue:5];
-    ORKQuestionStep *step = [ORKQuestionStep questionStepWithIdentifier:@"scaleQuestion"
+    ORKQuestionStep *step = [ORKQuestionStep questionStepWithIdentifier:@"sleepQualityQuestion"
                                                                   title:@"How would you rate last night's sleep?"
                                                                  answer:format];
     return step;
@@ -95,7 +94,7 @@
     }
     
     NSString *message = [NSString stringWithFormat:@"You Woke Up at %@ And Rated Your Sleep as a %@", [self timeFromDate:dateAnswer], [scaleAnswer stringValue]];
-    UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"Result" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+    UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"Result" message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alterView show];
 }
 
@@ -122,4 +121,5 @@
     
     return [timeFormatter stringFromDate:date];
 }
+
 @end
