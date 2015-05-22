@@ -14,6 +14,8 @@
 		074D3D721AFCF0E8001F87FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074D3D711AFCF0E8001F87FF /* Images.xcassets */; };
 		074D3D751AFCF0E8001F87FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074D3D731AFCF0E8001F87FF /* LaunchScreen.xib */; };
 		074D3D811AFCF0E8001F87FF /* ResearchKitSuveyTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D3D801AFCF0E8001F87FF /* ResearchKitSuveyTutorialTests.m */; };
+		074D3D941AFCF278001F87FF /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074D3D911AFCF245001F87FF /* ResearchKit.framework */; };
+		074D3D951AFCF278001F87FF /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074D3D911AFCF245001F87FF /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +26,42 @@
 			remoteGlobalIDString = 074D3D601AFCF0E8001F87FF;
 			remoteInfo = ResearchKitSuveyTutorial;
 		};
+		074D3D901AFCF245001F87FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 074D3D8A1AFCF245001F87FF /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		074D3D921AFCF245001F87FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 074D3D8A1AFCF245001F87FF /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		074D3D961AFCF278001F87FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 074D3D8A1AFCF245001F87FF /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		074D3D981AFCF278001F87FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				074D3D951AFCF278001F87FF /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		074D3D611AFCF0E8001F87FF /* ResearchKitSuveyTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResearchKitSuveyTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +77,7 @@
 		074D3D7A1AFCF0E8001F87FF /* ResearchKitSuveyTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResearchKitSuveyTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		074D3D7F1AFCF0E8001F87FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		074D3D801AFCF0E8001F87FF /* ResearchKitSuveyTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResearchKitSuveyTutorialTests.m; sourceTree = "<group>"; };
+		074D3D8A1AFCF245001F87FF /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../Downloads/ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074D3D941AFCF278001F87FF /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +102,7 @@
 		074D3D581AFCF0E8001F87FF = {
 			isa = PBXGroup;
 			children = (
+				074D3D8A1AFCF245001F87FF /* ResearchKit.xcodeproj */,
 				074D3D631AFCF0E8001F87FF /* ResearchKitSuveyTutorial */,
 				074D3D7D1AFCF0E8001F87FF /* ResearchKitSuveyTutorialTests */,
 				074D3D621AFCF0E8001F87FF /* Products */,
@@ -119,6 +159,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		074D3D8B1AFCF245001F87FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				074D3D911AFCF245001F87FF /* ResearchKit.framework */,
+				074D3D931AFCF245001F87FF /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +178,12 @@
 				074D3D5D1AFCF0E8001F87FF /* Sources */,
 				074D3D5E1AFCF0E8001F87FF /* Frameworks */,
 				074D3D5F1AFCF0E8001F87FF /* Resources */,
+				074D3D981AFCF278001F87FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				074D3D971AFCF278001F87FF /* PBXTargetDependency */,
 			);
 			name = ResearchKitSuveyTutorial;
 			productName = ResearchKitSuveyTutorial;
@@ -186,6 +237,12 @@
 			mainGroup = 074D3D581AFCF0E8001F87FF;
 			productRefGroup = 074D3D621AFCF0E8001F87FF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 074D3D8B1AFCF245001F87FF /* Products */;
+					ProjectRef = 074D3D8A1AFCF245001F87FF /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				074D3D601AFCF0E8001F87FF /* ResearchKitSuveyTutorial */,
@@ -193,6 +250,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		074D3D911AFCF245001F87FF /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 074D3D901AFCF245001F87FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		074D3D931AFCF245001F87FF /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 074D3D921AFCF245001F87FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		074D3D5F1AFCF0E8001F87FF /* Resources */ = {
@@ -240,6 +314,11 @@
 			isa = PBXTargetDependency;
 			target = 074D3D601AFCF0E8001F87FF /* ResearchKitSuveyTutorial */;
 			targetProxy = 074D3D7B1AFCF0E8001F87FF /* PBXContainerItemProxy */;
+		};
+		074D3D971AFCF278001F87FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = 074D3D961AFCF278001F87FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -418,6 +497,7 @@
 				074D3D861AFCF0E8001F87FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		074D3D871AFCF0E8001F87FF /* Build configuration list for PBXNativeTarget "ResearchKitSuveyTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +506,7 @@
 				074D3D891AFCF0E8001F87FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
