@@ -497,6 +497,7 @@
 				074D3D861AFCF0E8001F87FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		074D3D871AFCF0E8001F87FF /* Build configuration list for PBXNativeTarget "ResearchKitSuveyTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +506,7 @@
 				074D3D891AFCF0E8001F87FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
